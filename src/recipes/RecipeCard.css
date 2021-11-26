@@ -1,0 +1,12 @@
+.RecipeCard {
+    color: black;
+    width: 18rem;
+    margin: auto;
+    margin-bottom: 15px;
+}
+
+.RecipeCard:hover {
+    cursor: pointer;
+    transform: scale(1.03);
+    box-shadow: 2px 2px grey, -2px 0 .4em grey;
+}

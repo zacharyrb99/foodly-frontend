@@ -1,0 +1,13 @@
+h1 {
+    margin-bottom: 30px;
+}
+
+img {
+    width: 25vw;
+    height: 35vh;
+    border-radius: 15px;
+}
+
+.RecipeDetail {
+    width: 90vw;
+}
