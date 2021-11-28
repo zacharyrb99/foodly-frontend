@@ -74,6 +74,8 @@ const RecipeDetail = () => {
                 </Col>
 
                 <Col>
+                    <p> <a href={recipeInfo.strYoutube}> Watch this recipe on Youtube! </a> </p>
+                    
                     <p> {recipeInfo.strInstructions} </p>
 
                     {!savedRecipe 

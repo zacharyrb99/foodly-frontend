@@ -1,4 +1,3 @@
-import './App.css';
 import { BrowserRouter } from "react-router-dom";
 import { useEffect, useState } from "react";
 import NavBar from "./navbar&routes/NavBar";
@@ -7,6 +6,7 @@ import useLocalStorage from "./hooks/useLocalStorage";
 import jwt from "jsonwebtoken";
 import API from './API';
 import UserContext from "./auth/UserContext";
+import './App.css';
 
 function App() {
     const [infoLoaded, setInfoLoaded] = useState(false);

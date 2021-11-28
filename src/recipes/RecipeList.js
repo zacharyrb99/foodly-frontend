@@ -21,6 +21,7 @@ const RecipeList = () => {
             <Row className="RecipeList-row">
                     {recipes 
                         ? recipes.map(recipe => {
+                            console.log(recipe);
                             return <Col> <RecipeCard key={recipe.id} recipe={recipe}/> </Col>
                             })
                         : null

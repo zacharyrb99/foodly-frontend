@@ -54,12 +54,6 @@ class API {
         return res.saved;
     }
 
-    // Remove Recipe from User
-    static async removeRecipe(username, recipeId) {
-        let res = await this.request(`users/${username}/recipes/${recipeId}`, {}, "delete");
-        return res.removed;
-    }
-
     // ************************************************************************************************************
 
     // Search Cocktail
@@ -89,11 +83,7 @@ class API {
         return res.saved;
     }
 
-    // Remove Cocktail from User
-    static async removeCocktail(username, cocktailId) {
-        let res = await this.request(`users/${username}/cocktails/${cocktailId}`, {}, "delete");
-        return res.removed;
-    }
+    // ************************************************************************************************************
 
     // Sign up for a profile
     static async signUp(username, password, firstName, lastName, email) {

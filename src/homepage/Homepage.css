@@ -1,0 +1,21 @@
+.Homepage {
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+
+    padding-top: 75px;
+    padding-bottom: 75px;
+    border: 1px dashed black;
+    border-radius: 15px;
+}
+
+.Homepage a {
+    color: black;
+}
+
+.Homepage a:hover {
+    color: grey;
+}

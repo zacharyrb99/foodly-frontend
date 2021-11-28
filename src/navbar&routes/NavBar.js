@@ -54,7 +54,7 @@ const NavBar = ({logout}) => {
         <div>
             <Navbar>
                 <NavbarBrand className="navbar-brand" href="/">
-                    <Utensils />
+                    <Utensils /> Foodly
                 </NavbarBrand>
 
                 <Nav>
