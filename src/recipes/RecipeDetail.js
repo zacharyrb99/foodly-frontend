@@ -57,7 +57,7 @@ const RecipeDetail = () => {
                             <h6> <b> Ingredients: </b> </h6>
                             <ol>
                                 {ingredientsKeys
-                                    .filter(k => recipeInfo[k] !== null && recipeInfo[k].length > 0)
+                                    .filter(k => recipeInfo[k] !== null && recipeInfo[k].length > 0 && recipeInfo[k] !== " ")
                                     .map(k => <li> {recipeInfo[k]} </li>)}                     
                             </ol>
                         </Col>
@@ -66,7 +66,7 @@ const RecipeDetail = () => {
                             <h6> <b> Measurements: </b> </h6>
                             <ol>
                                 {measurementsKeys
-                                    .filter(k => recipeInfo[k] !== null && recipeInfo[k].length > 0)
+                                    .filter(k => recipeInfo[k] !== null && recipeInfo[k].length > 0 && recipeInfo[k] !== " ")
                                     .map(k => <li> {recipeInfo[k]} </li>)}
                             </ol>
                         </Col>
@@ -74,8 +74,10 @@ const RecipeDetail = () => {
                 </Col>
 
                 <Col>
-                    <p> <a href={recipeInfo.strYoutube}> Watch this recipe on Youtube! </a> </p>
-                    
+                    {recipeInfo.strYoutube.length > 0 
+                        ? <p> <a href={recipeInfo.strYoutube}> Watch this recipe on Youtube! </a> </p>
+                        : null}
+
                     <p> {recipeInfo.strInstructions} </p>
 
                     {!savedRecipe 
