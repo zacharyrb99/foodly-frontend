@@ -1,4 +1,4 @@
-# [Foodly](https://foodly-capstone2.surge.sh/)
+# [Foodly](https://foodly-capstone2.netlify.app/)
 
 ## Features:
 This site allows you to search for new recipes and cocktails to add to your diet. If you like a recipe or cocktail that you found, you can then save it and find it easily on your profile page.
