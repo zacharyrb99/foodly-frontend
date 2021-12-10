@@ -1,6 +1,6 @@
 import axios from "axios";
 
-// const BASE_URL = process.env.REACT_APP_BASE_URL || "http://localhost:5000";
+// const BASE_URL = "http://localhost:5000";
 const BASE_URL = "https://capstone2-foodly-backend.herokuapp.com";
 
 class API {
@@ -55,6 +55,12 @@ class API {
         return res.saved;
     }
 
+    // Unsave recipe from user
+    static async unsaveRecipe(username, recipeId) {
+        let res = await this.request(`users/${username}/recipes/${recipeId}`, {}, "delete");
+        return res.unsaved;
+    }
+
     // ************************************************************************************************************
 
     // Search Cocktail
@@ -82,6 +88,12 @@ class API {
     static async saveCocktail(username, cocktailId) {
         let res = await this.request(`users/${username}/cocktails/${cocktailId}`, {}, "post");
         return res.saved;
+    }
+
+    // Unsave Cocktail from user
+    static async unsaveCocktail(username, cocktailId) {
+        let res = await this.request(`users/${username}/cocktails/${cocktailId}`, {}, "delete");
+        return res.unsaved;
     }
 
     // ************************************************************************************************************

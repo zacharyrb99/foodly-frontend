@@ -6,7 +6,7 @@ import UserContext from "../auth/UserContext";
 import "./CocktailDetail.css";
 
 const CocktailDetail = () => {
-    const { alreadySavedCocktail, saveCocktail } = useContext(UserContext);
+    const { alreadySavedCocktail, saveCocktail, unsaveCocktail } = useContext(UserContext);
     const [drinkInfo, setDrinkInfo] = useState([]);
     const [ingredientsKeys, setIngredientsKeys] = useState(null);
     const [measurementsKeys, setMeasurementsKeys] = useState(null);
@@ -36,10 +36,16 @@ const CocktailDetail = () => {
         setSavedCocktail(alreadySavedCocktail(+drinkInfo.idDrink));
     }, [drinkInfo.idDrink, alreadySavedCocktail]);
 
-    const handleSaveCocktail = async e => {
-        if (alreadySavedCocktail(+drinkInfo.idDrink)) return;
-        saveCocktail(+drinkInfo.idDrink, drinkInfo.strDrink, drinkInfo.strInstructions, drinkInfo.strDrinkThumb);
-        setSavedCocktail(true);
+    const handleSave = async e => {
+        if (alreadySavedCocktail(+drinkInfo.idDrink)) {
+            await unsaveCocktail(+drinkInfo.idDrink);
+            setSavedCocktail(false);
+            window.location.reload(true);
+        } else {
+            await saveCocktail(+drinkInfo.idDrink, drinkInfo.strDrink, drinkInfo.strInstructions, drinkInfo.strDrinkThumb);
+            setSavedCocktail(true);
+            window.location.reload(true);
+        }
     }
 
     if (!drinkInfo || !ingredientsKeys || !measurementsKeys) return <h1> ...Loading </h1>
@@ -53,8 +59,8 @@ const CocktailDetail = () => {
                     <p> {drinkInfo.strCategory}, {drinkInfo.strAlcoholic} </p>
 
                     {!savedCocktail 
-                        ? <Button className="CocktailDetail-button" color="danger" onClick={handleSaveCocktail}> Save Cocktail </Button> 
-                        : <Button className="CocktailDetail-button" color="success" disabled> Already Saved </Button>}
+                        ? <Button className="CocktailDetail-button" color="success" onClick={handleSave}> Save Cocktail </Button> 
+                        : <Button className="CocktailDetail-button" color="danger" onClick={handleSave}> Unsave Cocktail </Button>}
                 </Col>
 
                 <Col>

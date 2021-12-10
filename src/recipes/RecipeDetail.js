@@ -6,7 +6,7 @@ import UserContext from "../auth/UserContext";
 import "./RecipeDetail.css";
 
 const RecipeDetail = () => {
-    const { alreadySavedRecipe, saveRecipe } = useContext(UserContext);
+    const { alreadySavedRecipe, saveRecipe, unsaveRecipe } = useContext(UserContext);
     const [recipeInfo, setRecipeInfo] = useState([]);
     const [ingredientsKeys, setIngredientsKeys] = useState(null);
     const [measurementsKeys, setMeasurementsKeys] = useState(null);
@@ -36,10 +36,16 @@ const RecipeDetail = () => {
         setSavedRecipe(alreadySavedRecipe(+recipeInfo.idMeal));
     }, [recipeInfo.idMeal, alreadySavedRecipe]);
 
-    const handleSaveRecipe = async e => {
-        if (alreadySavedRecipe(+recipeInfo.idMeal)) return;
-        saveRecipe(+recipeInfo.idMeal, recipeInfo.strMeal, recipeInfo.strInstructions, recipeInfo.strMealThumb);
-        setSavedRecipe(true);
+    const handleSave = async e => {
+        if (alreadySavedRecipe(+recipeInfo.idMeal)) {
+            await unsaveRecipe(+recipeInfo.idMeal);
+            setSavedRecipe(false);
+            window.location.reload(true);
+        } else {
+            await saveRecipe(+recipeInfo.idMeal, recipeInfo.strMeal, recipeInfo.strInstructions, recipeInfo.strMealThumb);
+            setSavedRecipe(true);
+            window.location.reload(true);
+        }
     }
 
     if (!recipeInfo || !ingredientsKeys || !measurementsKeys) return <h1> ...Loading </h1>
@@ -80,9 +86,15 @@ const RecipeDetail = () => {
 
                     <p> {recipeInfo.strInstructions} </p>
 
+                    {/* {!savedRecipe 
+                        ? <Button className="RecipeCard-button" color="danger" onClick={handleSaveRecipe}> Save Recipe </ Button> 
+                        : <Button className="RecipeCard-button" color="success" onClick={handleUnsaveRecipe}> Already Saved </Button>
+                    } */}
+
                     {!savedRecipe 
-                    ? <Button className="RecipeCard-button" color="danger" onClick={handleSaveRecipe}> Save Recipe </ Button> 
-                    : <Button className="RecipeCard-button" color="success" disabled> Already Saved </Button>}
+                        ? <Button className="RecipeCard-button" color="success" onClick={handleSave}> Save Recipe </ Button> 
+                        : <Button className="RecipeCard-button" color="danger" onClick={handleSave}> Unsave Recipe </Button>
+                    }
                 </Col>
             </Row>
         </div>

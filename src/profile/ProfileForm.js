@@ -60,27 +60,27 @@ const ProfileForm = () => {
         <div>
             <Form className="ProfileForm" onSubmit={handleSubmit}>
                 <FormGroup row>
-                    <Label for="username">Username: </Label>
+                    <Label for="username"> Username: </Label>
                     <Input type="text" name="username" id="username" value={formData.username} readonly />
                 </FormGroup>
 
                 <FormGroup row>
-                    <Label for="firstName">First Name: </Label>
+                    <Label for="firstName"> First Name: </Label>
                     <Input type="text" name="firstName" id="firstName" placeholder="First Name" value={formData.firstName} onChange={handleChange} />
                 </FormGroup>
 
                 <FormGroup row>
-                    <Label for="lastName">Last Name: </Label>
+                    <Label for="lastName"> Last Name: </Label>
                     <Input type="text" name="lastName" id="lastName" placeholder="Last Name" value={formData.lastName} onChange={handleChange} />
                 </FormGroup>
 
                 <FormGroup row>
-                    <Label for="email">Email: </Label>
+                    <Label for="email"> Email: </Label>
                     <Input type="text" name="email" id="email" placeholder="Email" value={formData.email} onChange={handleChange} />
                 </FormGroup>
-
+                
                 <FormGroup row>
-                    <Label for="password">Password: </Label>
+                    <Label for="password"> Confirm Password to Update User: </Label>
                     <Input type="password" name="password" id="password" placeholder="Password" value={formData.password} onChange={handleChange} />
                 </FormGroup>
 

@@ -5,7 +5,6 @@ import { Button, Row, Col } from "reactstrap";
 import axios from "axios";
 import RecipeCard from "../recipes/RecipeCard";
 import CocktailCard from "../cocktails/CocktailCard";
-import API from "../API";
 import "./ProfilePage.css";
 
 const ProfilePage = () => {
@@ -42,8 +41,6 @@ const ProfilePage = () => {
         getRecipeInfo(currUser.savedRecipes);
         getCocktailInfo(currUser.savedCocktails);
     }, [currUser]);
-
-    if (!recipes) return <h1> ...Loading </h1>
 
     return (
         <div>

@@ -35,7 +35,7 @@ function App() {
 
         setInfoLoaded(false);
         getCurrentUser();
-    }, [token]);
+    }, [token   ]);
 
     const alreadySavedRecipe = id => {
       return savedRecipeIds.has(id);
@@ -49,6 +49,16 @@ function App() {
             await API.saveRecipe(currUser.username, id);
         } catch (e) {
             await API.saveRecipe(currUser.username, id);
+        }
+    }
+
+    const unsaveRecipe = async (id) => {
+        if (!alreadySavedRecipe(id)) return;
+
+        try {
+            await API.unsaveRecipe(currUser.username, id);
+        } catch (e) {
+            console.error(e);
         }
     }
 
@@ -67,6 +77,16 @@ function App() {
       }
     }
 
+    const unsaveCocktail = async (id) => {
+        if (!alreadySavedCocktail(id)) return;
+
+        try {
+            await API.unsaveCocktail(currUser.username, id);
+        } catch (e) {
+            console.error(e);
+        }
+    }
+
     const logout = () => {
         setCurrUser(null);
         setToken(null);
@@ -82,7 +102,7 @@ function App() {
 
     return (
         <BrowserRouter>
-            <UserContext.Provider value={{currUser, setCurrUser, alreadySavedRecipe, saveRecipe, alreadySavedCocktail, saveCocktail}}>
+            <UserContext.Provider value={{currUser, setCurrUser, alreadySavedRecipe, saveRecipe, unsaveRecipe, alreadySavedCocktail, saveCocktail, unsaveCocktail}}>
                 <div className="App">
                     <NavBar logout={logout} />
                     <AppRoutes setToken={setToken} />
