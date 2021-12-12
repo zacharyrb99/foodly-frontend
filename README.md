@@ -1,7 +1,9 @@
 # [Foodly](https://foodly-capstone2.netlify.app/)
 
+# [Backend] (https://github.com/zacharyrb99/capstone2-backend)
+
 ## Features:
-This site allows you to search for new recipes and cocktails to add to your diet. If you like a recipe or cocktail that you found, you can then save it and find it easily on your profile page.
+This site allows you to search for new recipes and cocktails to add to your diet. If you like a recipe or cocktail that you found, you can then save it and find it easily on your profile page. 
 
 1. Log in or sign up
     - I chose to make the app require a user to log in to use most of its features. This simplified the saving feature for recipes & cocktails.    The only thing you will be able to do while anonymous is view the homepage. 
