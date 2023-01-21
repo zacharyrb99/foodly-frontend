@@ -1,10 +1,25 @@
-# Link to deployed app: [Foodly](https://foodly-capstone2.netlify.app/)
+# Foodly frontend
+A responsive front end that utilizes my API driven backend to allow you to search for and incorporate new food and drink recipes in your diet. It allows you to add save your favorite food or drink recipe for easy access in the future.
 
-# Link to backend: [Backend](https://github.com/zacharyrb99/capstone2-backend)
+## Table of Contents
+- Requirements
+- Installation
+- Start
+- Features
+- Data
+
+## Requirements 
+1. NPM
+
+## Installation
+To install the required dependencies, it is straight forward thanks to NPM:
+`npm i`
+
+## Start
+NPM makes it easy to spin up the backend server: 
+`npm start`
 
 ## Features:
-This site allows you to search for new recipes and cocktails to add to your diet. If you like a recipe or cocktail that you found, you can then save it and find it easily on your profile page. 
-
 1. Log in or sign up
     - I chose to make the app require a user to log in to use most of its features. This simplified the saving feature for recipes & cocktails.    The only thing you will be able to do while anonymous is view the homepage. 
 2. Search recipes or cocktails.
@@ -14,24 +29,8 @@ This site allows you to search for new recipes and cocktails to add to your diet
 4. Update user profile
     - This will allow a user to change their name and email, and requires password authentication. User currently aren't able to change their username or password.
 
-## Flow
-1. Create an account.
-2. Head to recipe search page.
-3. Search for favorite recipe.
-4. Click on different recipes to see more details and find your favorite.
-5. Save the recipes that you find interesting or want to make later.
-6. Head to profile page when you want to look at these recipes again.
-
-## Testing
-All the tests are located on the [backend repo](https://github.com/zacharyrb99/capstone2-backend). Simply open this folder in your terminal and run `npm run test`
-
 ## Data Supplied By:
 __Data was inconsistent at times, so there may be some styling issues on occasion for certain recipes/cocktails__
 
 1. [Meals](https://www.themealdb.com/api.php)
 2. [Drinks](https://www.thecocktaildb.com/api.php)
-
-## Tech Stack:
-- __Front-end__: React
-- __Back-end__: Nodejs, Express
-- __Database__: Postgresql
