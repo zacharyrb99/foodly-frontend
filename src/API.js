@@ -1,7 +1,6 @@
 import axios from "axios";
 
 const BASE_URL = "http://localhost:5000";
-// const BASE_URL = "https://capstone2-foodly-backend.herokuapp.com";
 
 class API {
     // Token used for authorization
