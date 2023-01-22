@@ -1,5 +1,5 @@
 # Foodly frontend
-A responsive front end that utilizes my API driven backend to allow you to search for and incorporate new food and drink recipes in your diet. It allows you to add save your favorite food or drink recipe for easy access in the future.
+A responsive front end that utilizes my API driven [**backend**](https://github.com/zacharyrb99/foodly-backend) to allow you to search for and incorporate new food and drink recipes in your diet. It allows you to save your favorite food or drink recipes for easy access in the future.
 
 ## Table of Contents
 - Requirements
